@@ -8,73 +8,64 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #0b0f14;
-      --card: #121823;
-      --muted: #97a3b6;
-      --text: #e6eefc;
-      --brand: #6aa9ff;
-      --brand-2: #66f0d1;
-      --ring: rgba(102, 240, 209, 0.35);
-    }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
+    :root { --bg:#0b0f14; --card:#121823; --muted:#97a3b6; --text:#e6eefc; --brand:#6aa9ff; --brand-2:#66f0d1; --ring:rgba(102,240,209,.35); }
+    * { box-sizing:border-box; }
+    html, body { height:100%; }
     body {
-      margin: 0; background: radial-gradient(1200px 800px at 10% -20%, rgba(102,240,209,.06), transparent 70%),
-                              radial-gradient(1400px 900px at 120% 20%, rgba(106,169,255,.06), transparent 70%),
-                              var(--bg);
-      color: var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      line-height: 1.6;
+      margin:0; background: radial-gradient(1200px 800px at 10% -20%, rgba(102,240,209,.06), transparent 70%),
+                         radial-gradient(1400px 900px at 120% 20%, rgba(106,169,255,.06), transparent 70%),
+                         var(--bg);
+      color:var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height:1.6;
     }
     a { color: var(--brand); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .container { width: min(1100px, 92vw); margin: 0 auto; }
-    header { padding: 48px 0 24px; }
-    .badge { display:inline-block; padding:.3rem .6rem; background: linear-gradient(90deg,var(--brand),var(--brand-2)); color:#08121a; border-radius:999px; font-weight:700; font-size:.75rem; letter-spacing:.02em; }
-    .hero { display:grid; gap: 20px; grid-template-columns: 1fr; align-items:center; padding: 8px 0 8px; }
-    .title { font-size: clamp(28px, 6vw, 46px); line-height: 1.1; margin: 8px 0 4px; font-weight: 900; letter-spacing:-0.02em; }
-    .subtitle { color: var(--muted); font-size: clamp(14px, 2.2vw, 18px); }
-    .actions { display:flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
-    .btn { display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:14px; background: #192233; color: var(--text); border:1px solid #253046; text-decoration:none; font-weight:600; box-shadow: 0 0 0 0 rgba(0,0,0,0); transition: transform .12s ease, box-shadow .2s ease, border-color .2s ease; }
-    .btn:hover { transform: translateY(-1px); border-color: var(--brand); box-shadow: 0 0 0 6px var(--ring); text-decoration:none; }
-    .btn.primary { background: linear-gradient(135deg, #1a2536, #0f1a2a); border-color:#2c3a56; }
-    section { padding: 28px 0; }
-    h2 { font-size: 22px; margin: 0 0 14px; letter-spacing:.01em; }
-    .card { background: linear-gradient(180deg, #111827, #0e1521); border:1px solid #1f2a3f; border-radius: 18px; padding: 18px; box-shadow: 0 10px 30px rgba(0,0,0,.25); }
+    .container { width:min(1100px,92vw); margin:0 auto; }
+    header { padding:48px 0 24px; }
+    .badge { display:inline-block; padding:.3rem .6rem; background:linear-gradient(90deg,var(--brand),var(--brand-2)); color:#08121a; border-radius:999px; font-weight:700; font-size:.75rem; letter-spacing:.02em; }
+    .hero { display:grid; gap:20px; grid-template-columns:1fr; align-items:center; padding:8px 0; }
+    .title { font-size: clamp(28px,6vw,46px); line-height:1.1; margin:8px 0 4px; font-weight:900; letter-spacing:-.02em; }
+    .subtitle { color:var(--muted); font-size: clamp(14px,2.2vw,18px); }
+    .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+    .btn { display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:14px; background:#192233; color:var(--text); border:1px solid #253046; font-weight:600; }
+    .btn:hover { transform: translateY(-1px); border-color: var(--brand); box-shadow:0 0 0 6px var(--ring); text-decoration:none; }
+    .btn.primary { background: linear-gradient(135deg,#1a2536,#0f1a2a); border-color:#2c3a56; }
+    section { padding:28px 0; }
+    h2 { font-size:22px; margin:0 0 14px; letter-spacing:.01em; }
+    .card { background: linear-gradient(180deg,#111827,#0e1521); border:1px solid #1f2a3f; border-radius:18px; padding:18px; box-shadow:0 10px 30px rgba(0,0,0,.25); }
     .grid { display:grid; gap:16px; }
-    @media (min-width: 880px) { .grid.cols-3 { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width:880px) { .grid.cols-2 { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width:1080px) { .grid.cols-3 { grid-template-columns: repeat(3, 1fr); } }
     .chip { display:inline-flex; align-items:center; padding:6px 10px; border-radius:999px; border:1px solid #253046; background:#0e1624; font-size:12px; margin:4px 6px 0 0; color:#cbd7ee; }
-    .muted { color: var(--muted); }
-    .sp { height: 10px; }
-    .project h3 { margin: 0; font-size: 18px; }
-    .project p { margin: 8px 0 0; color:#cad6ee; font-size: 14px; }
-    .project .links { margin-top: 10px; display:flex; gap:10px; flex-wrap:wrap; }
+    .muted { color:var(--muted); }
+    .sp { height:10px; }
+    .project h3 { margin:0; font-size:18px; }
+    .project p { margin:8px 0 0; color:#cad6ee; font-size:14px; }
+    .project .links { margin-top:10px; display:flex; gap:10px; flex-wrap:wrap; }
     .timeline { display:grid; gap:12px; }
-    .item { display:grid; gap:8px; padding:14px; border-radius:16px; background: #0f1726; border:1px solid #1f2a3f; }
-    .item strong { font-size: 15px; }
-    .footer { text-align:center; color:var(--muted); font-size: 13px; padding: 28px 0 40px; }
-    ul { padding-left: 18px; margin: 6px 0 0; }
-    li { margin: 6px 0; }
+    .item { display:grid; gap:8px; padding:14px; border-radius:16px; background:#0f1726; border:1px solid #1f2a3f; }
+    .item strong { font-size:15px; }
+    .footer { text-align:center; color:var(--muted); font-size:13px; padding:28px 0 40px; }
+    ul { padding-left:18px; margin:6px 0 0; }
+    li { margin:6px 0; }
     .two-col { display:grid; gap:16px; }
-    @media (min-width: 880px) { .two-col { grid-template-columns: 1.2fr .8fr; } }
-    .callout { border:1px dashed #27405f; background: #0c1422; padding: 12px 14px; border-radius: 14px; color:#bcd0f0; }
-    code.inline { background: #0c1422; border:1px solid #253046; padding: 2px 6px; border-radius: 6px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-size: 12px; }
+    @media (min-width: 980px) { .two-col { grid-template-columns: 1.25fr .75fr; } }
+    .callout { border:1px dashed #27405f; background:#0c1422; padding:12px 14px; border-radius:14px; color:#bcd0f0; }
+    code.inline { background:#0c1422; border:1px solid #253046; padding:2px 6px; border-radius:6px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:12px; }
   </style>
 </head>
 <body>
   <header>
     <div class="container hero">
-      <span class="badge">Data Analyst · SQL · Python · Tableau · Splunk</span>
+      <span class="badge">Data Analytics · Python · SQL · Tableau · Power BI · Splunk</span>
       <h1 class="title">Rohan Watave</h1>
-      <p class="subtitle">Graduate student (Clark University · May 2026) with hands‑on experience at HDFC and Sutherland Mortgage. I turn raw data into clear stories and automated dashboards that drive decisions.</p>
+      <p class="subtitle">Data Analytics graduate student with 12+ years of mortgage sales & consulting experience. Skilled in EDA, predictive modeling, dashboards, and stakeholder storytelling.</p>
       <div class="actions">
-        <a class="btn primary" href="#projects" aria-label="See featured projects">⬇︎ View Projects</a>
-        <a class="btn" href="#" target="_blank" rel="noreferrer">GitHub</a>
-        <a class="btn" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a class="btn" href="#" download>Download Résumé (PDF)</a>
-        <a class="btn" href="mailto:your.email@example.com">Email</a>
+        <a class="btn primary" href="#projects">⬇︎ View Projects</a>
+        <a class="btn" href="https://github.com/rwatave" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/rohan-w-0b6264270/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="btn" href="mailto:rwatave@clarku.edu">Email</a>
       </div>
-      <div class="callout" role="note" style="margin-top:10px">Replace placeholder links (GitHub, LinkedIn, Email, Résumé) before publishing.</div>
+      <div class="callout" role="note" style="margin-top:10px">Worcester, MA · +1 323 841 4617 · <a href="mailto:rwatave@clarku.edu">rwatave@clarku.edu</a></div>
     </div>
   </header>
 
@@ -83,82 +74,61 @@
       <section id="about" class="card">
         <h2>About</h2>
         <p>
-          I specialize in data preparation, exploratory data analysis, KPI design, and dashboard automation. My toolkit spans <strong>SQL</strong>, <strong>Python</strong> (pandas, matplotlib), <strong>Tableau</strong>, and <strong>Splunk</strong> for event data. I enjoy building end‑to‑end analytics: ingest → clean → analyze → visualize → iterate.
+          I bridge business context from mortgage operations with modern analytics: data preparation, exploratory analysis,
+          predictive modeling, and dashboarding. Comfortable moving from raw CSV/SQL to concise insights, with clear visuals
+          and next-step recommendations.
         </p>
         <div class="sp"></div>
         <div>
-          <span class="chip">SQL</span>
           <span class="chip">Python</span>
-          <span class="chip">pandas</span>
+          <span class="chip">SQL</span>
           <span class="chip">Tableau</span>
-          <span class="chip">Splunk</span>
+          <span class="chip">Power BI</span>
           <span class="chip">Excel</span>
-          <span class="chip">Git/GitHub</span>
+          <span class="chip">Splunk</span>
+          <span class="chip">EDA</span>
+          <span class="chip">Logistic Regression</span>
+          <span class="chip">Clustering</span>
+          <span class="chip">Decision Trees</span>
         </div>
       </section>
 
-      <section id="projects" class="grid cols-3">
+      <section id="projects" class="grid cols-2">
         <div class="project card">
-          <h3>Buttercup Games · SRE Golden Signals</h3>
-          <p>Built Splunk dashboards for <em>latency, traffic, errors, saturation</em> using access logs. Created automatic lookups and alerts to catch anomalies in near‑real‑time.</p>
+          <h3>Spotify Listening Trends</h3>
+          <p>Exploratory analysis of listening behavior to surface genre trends and engagement drivers.</p>
           <ul>
-            <li>Ingested data and normalized sourcetypes (<code class="inline">access_*</code>).</li>
-            <li>Designed KPIs and sparkline panels; added alerting rules.</li>
-            <li>Documented decisions and dashboards for reproducibility.</li>
+            <li>Built regression & classification baselines.</li>
+            <li>Published dashboards for stakeholder review (Tableau).</li>
           </ul>
-          <div class="links">
-            <a href="#">▶ Demo (add link)</a>
-            <a href="#">Repo/Notebook (add link)</a>
-          </div>
+          <div class="links"><a href="#">Notebook (add link)</a> <a href="#">Tableau (add link)</a></div>
         </div>
         <div class="project card">
-          <h3>Mortgage Servicing KPIs (Sutherland)</h3>
-          <p>Automated weekly KPI pack (delinquency, call SLAs, resolution time) by combining SQL extracts with Python clean‑ups and Tableau dashboards.</p>
+          <h3>Customer Churn Prediction (Capstone)</h3>
+          <p>Cleaned telecom usage data, engineered features, and trained models to predict churn risk.</p>
           <ul>
-            <li>Reduced prep time by ~40% via scripted pipelines.</li>
-            <li>Improved accuracy with validation rules and unit tests.</li>
+            <li>Algorithms: Logistic Regression, Decision Trees, Random Forest.</li>
+            <li>Reported drivers of churn and retention actions.</li>
           </ul>
-          <div class="links">
-            <a href="#">Dashboard Screens (add link)</a>
-            <a href="#">SQL/Python (add link)</a>
-          </div>
+          <div class="links"><a href="#">Notebook (add link)</a></div>
         </div>
         <div class="project card">
-          <h3>Retail Lending Analytics (HDFC)</h3>
-          <p>Analyzed loan approval & customer behavior data to identify process bottlenecks; proposed changes that shortened processing cycles.</p>
+          <h3>Customer Segmentation (Clustering)</h3>
+          <p>Segmented banking customers by spending behavior for targeted marketing and service.</p>
           <ul>
-            <li>Built reusable SQL views and Excel templates.</li>
-            <li>Presented insights to stakeholders with clear visuals.</li>
+            <li>Techniques: K-Means, EDA, PCA.</li>
+            <li>Delivered persona summaries & recommendations.</li>
           </ul>
-          <div class="links">
-            <a href="#">Case Study PDF (add link)</a>
-            <a href="#">SQL snippets (add link)</a>
-          </div>
+          <div class="links"><a href="#">Notebook (add link)</a></div>
         </div>
         <div class="project card">
-          <h3>Fraud Analytics Mini‑Study</h3>
-          <p>Exploratory project inspired by forensic analytics—pattern mining on transactions to surface anomalies using Python and rule‑based flags.</p>
+          <h3>Lead Conversion Prediction (EdTech)</h3>
+          <p>Modeled probability of lead-to-customer conversion to optimize marketing spend.</p>
           <ul>
-            <li>Engineered features like frequency, velocity, peer z‑scores.</li>
-            <li>Built explainable rules for quick triage.</li>
+            <li>Techniques: Logistic Regression, LDA, Decision Trees.</li>
+            <li>Produced feature importance & action checklist.</li>
           </ul>
-          <div class="links">
-            <a href="#">Notebook (add link)</a>
-          </div>
-        </div>
-        <div class="project card">
-          <h3>SQL Portfolio</h3>
-          <p>Curated SQL scripts: window functions, CTEs, cohort analysis, data quality checks—documented with before/after examples.</p>
-          <div class="links">
-            <a href="#">SQL repo (add link)</a>
-          </div>
-        </div>
-        <div class="project card">
-          <h3>Tableau Gallery</h3>
-          <p>Selected dashboards: product performance, funnel drop‑offs, geo heatmaps. Each with a one‑paragraph takeaway.</p>
-          <div class="links">
-            <a href="#">Tableau Public (add link)</a>
-          </div>
+          <div class="links"><a href="#">Notebook (add link)</a></div>
         </div>
       </section>
     </div>
@@ -168,19 +138,26 @@
         <h2>Experience</h2>
         <div class="timeline">
           <div class="item">
-            <strong>Sutherland Mortgage · Data Analyst</strong>
-            <span class="muted">Automation & KPI reporting</span>
+            <strong>Senior Manager — HDFC Bank</strong>
+            <span class="muted">Jun 2024 – Oct 2024 · Thane, Maharashtra</span>
             <ul>
-              <li>Built automated KPI pack across servicing workflows (SQL → Python → Tableau).</li>
-              <li>Cut manual prep time and improved accuracy with validations.</li>
+              <li>Preferred Relationship Manager for HNW clients; personalized financial solutions.</li>
+              <li>Maintained client relationships, satisfaction, and retention.</li>
             </ul>
           </div>
           <div class="item">
-            <strong>HDFC · Data Analyst (Retail Lending)</strong>
-            <span class="muted">Loan analytics & operational insights</span>
+            <strong>Senior Associate Manager — Sutherland Global Services</strong>
+            <span class="muted">Oct 2018 – May 2024 · Navi Mumbai</span>
             <ul>
-              <li>Analyzed approval funnels to surface bottlenecks and SLA risks.</li>
-              <li>Standardized reporting templates and reusable SQL views.</li>
+              <li>Process improvements & quality management in automated underwriting.</li>
+              <li>Training, client servicing, CRM; market research & competitive analysis.</li>
+            </ul>
+          </div>
+          <div class="item">
+            <strong>Team Manager — Sutherland Global Services Pvt Ltd</strong>
+            <span class="muted">Sep 2008 – Apr 2015 · Thane, Maharashtra</span>
+            <ul>
+              <li>Mortgage consulting and team leadership across lead gen and telesales.</li>
             </ul>
           </div>
         </div>
@@ -189,33 +166,51 @@
       <section class="card">
         <h2>Education</h2>
         <div class="item">
-          <strong>Clark University</strong>
-          <div class="muted">Graduate studies · Expected May 2026</div>
-          <ul>
-            <li>Applied Deep Learning, ML, statistics, and analytics coursework.</li>
-          </ul>
+          <strong>Clark University — MSDA (Data Analytics)</strong>
+          <div class="muted">Worcester, MA · Expected May 2026</div>
+        </div>
+        <div class="item">
+          <strong>Texas McCombs — PG Diploma in Data Science & Business Analytics</strong>
+          <div class="muted">Expected May 2025</div>
+        </div>
+        <div class="item">
+          <strong>PTVA's Institute of Management — MMS (Marketing)</strong>
+          <div class="muted">Jan 2018</div>
+        </div>
+        <div class="item">
+          <strong>University of Mumbai — B.Com (Financial Accounting & Auditing)</strong>
+          <div class="muted">Apr 2014</div>
         </div>
       </section>
 
       <section class="card">
-        <h2>Contact</h2>
-        <p class="muted">Based in MA, USA · Open to internships/part‑time roles in data analytics.</p>
+        <h2>Languages</h2>
         <ul>
-          <li>📧 <a href="mailto:your.email@example.com">your.email@example.com</a></li>
-          <li>🔗 <a href="#" target="_blank" rel="noreferrer">LinkedIn (add link)</a></li>
-          <li>💻 <a href="#" target="_blank" rel="noreferrer">GitHub (add link)</a></li>
+          <li>Marathi — Native</li>
+          <li>English — Fluent</li>
+          <li>Hindi — Fluent</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Contact</h2>
+        <ul>
+          <li>📞 +1 323 841 4617</li>
+          <li>📧 <a href="mailto:rwatave@clarku.edu">rwatave@clarku.edu</a></li>
+          <li>🔗 <a href="https://www.linkedin.com/in/rohan-w-0b6264270/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+          <li>💻 <a href="https://github.com/rwatave" target="_blank" rel="noreferrer">GitHub</a></li>
         </ul>
       </section>
 
       <section class="card">
         <h2>How this site is built</h2>
-        <p class="muted">Plain HTML + CSS, fast to load, perfect for GitHub Pages. Edit in any text editor, commit, and push.</p>
+        <p class="muted">Plain HTML + CSS for fast GitHub Pages hosting. Edit, commit, and push.</p>
       </section>
     </aside>
   </main>
 
   <footer class="footer">
-    <span>© <span id="y"></span> Rohan Watave · Last updated Sep 2025</span>
+    <span>© <span id="y"></span> Rohan Watave · Last updated Sep 2025</span>
   </footer>
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
